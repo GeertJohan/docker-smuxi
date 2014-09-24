@@ -17,15 +17,13 @@ RUN update-locale LANG=en_US.UTF-8
 RUN dpkg-reconfigure locales
 
 # Update Ubuntu
-RUN echo "deb http://ppa.launchpad.net/meebey/smuxi-daily/ubuntu trusty main" >> /etc/apt/sources.list
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5C39B6F9FC6D77D5
 RUN apt-get -q update
 RUN apt-mark hold initscripts udev plymouth mountall
 RUN apt-get -qy --force-yes dist-upgrade
 
 # Install smuxi from apt 
 RUN usermod -m -d /config nobody
-RUN apt-get install -qy --force-yes smuxi-server
+RUN apt-get install -qy --force-yes smuxi-engine
 
 ADD ./start.sh /start.sh
 ADD ./creds.conf /creds.conf
