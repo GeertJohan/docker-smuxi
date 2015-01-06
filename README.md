@@ -1,4 +1,4 @@
-#docker TinyMediaManager
+#docker Smuxi
 
 ## Description:
 
@@ -10,13 +10,6 @@ one or more frontends then connect to the core. This way, the connection to
 IRC can be kept up even when all frontends have been closed. The combination  
 of screen and irssi served as example for this architecture.  
 
-## Build from docker file:
-
-```
-git clone --depth=1 https://github.com/HurricaneHernandez/docker-smuxi.git  
-cd docker-smuxi
-docker build --rm=true -t Smuxi . 
-```
 
 ![Alt text](http://i.imgur.com/OKQbbge.png "")
 
@@ -43,7 +36,7 @@ PASSWORD
 ```
 This environment variable is used to personalize the password of the Smuxi user. Default password is admin.
 
-``
+```
 TZ
 ```
 This environment variable is used to set the [TimeZone] of the container.
@@ -56,3 +49,10 @@ This environment variable is used to set the [TimeZone] of the container.
 
 Config directory of Smuxi.
 
+## Build from docker file (Info only, not required.):
+
+```
+git clone --depth=1 https://github.com/HurricaneHernandez/docker-smuxi.git  
+cd docker-smuxi
+docker build --rm=true -t Smuxi . 
+```
